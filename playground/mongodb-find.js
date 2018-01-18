@@ -24,9 +24,9 @@ MongoClient.connect(url, (err, client) => {
     //     console.log('Unable to fetch todos', err);
     // });
 
-    usersCollection.find({name: 'Ridar'}).toArray().then((docs) => {
+    usersCollection.find().toArray().then((docs) => {
         console.log(JSON.stringify(docs, undefined, 2));
-        client.close();
+        return usersCollection.find(docs[0][1]).toArray();
     });
 
     // client.close();
