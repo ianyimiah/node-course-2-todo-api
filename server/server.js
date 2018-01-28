@@ -5,7 +5,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const {ObjectID} = require('mongodb');
 
-const {mongoose} = require('./db/mongoose')
 const {Todo} = require('./models/todo');
 const {User} = require('./models/user');
 var {authenticate} = require('./middleware/authenticate');
@@ -101,7 +100,7 @@ app.post('/users', (req, res) => {
     var user = new User(body);
 
     user.save().then(() => {
-        return user.generateAuthToken()
+        return user.generateAuthToken();
         // res.send(user); 
     })
     .then((token) => {

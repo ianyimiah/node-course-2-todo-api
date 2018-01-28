@@ -65,7 +65,7 @@ userSchema.statics.findByToken = function (token) {
         _id: decoded._id,
         'tokens.token': token,
         'tokens.access': 'auth'
-    })
+    });
 }
 
 var User = mongoose.model('User', userSchema);
