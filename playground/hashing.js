@@ -13,7 +13,7 @@ bcrypt.genSalt(10, (err, salt) => {
 var hashedPassword = '$2a$10$CxTqO2ZWM182LT7Dt/Xh4O/cNPsHvT6ptfzHYKWalHSuuy8/TPUPO';
 
 bcrypt.compare(password, hashedPassword, (err, res) => {
-    console.log(res);
+    console.log('res', res);
 });
 // var data = {
 //     id: 10
